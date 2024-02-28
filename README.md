@@ -8,6 +8,6 @@ This repository contains the source code and resources related to the learn-spri
 
 Make sure to have the following requirements installed before getting started:
 
-- Java JDK (version X.X.X)
-- Spring Framework (version X.X.X)
+- Java JDK
+- Spring Framework
 
