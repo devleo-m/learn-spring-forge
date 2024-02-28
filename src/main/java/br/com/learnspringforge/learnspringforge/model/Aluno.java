@@ -7,19 +7,19 @@ import javax.xml.crypto.Data;
 import java.util.Date;
 
 public class Aluno {
-    private long ID;
-    private static long countId = 1;
+    private long id_aluno;
+    private static long countId = 0;
     private String nome;
     private Date nascimento;
 
     public Aluno(String nome, Date nascimento) {
-        this.ID = ++countId;
+        this.id_aluno = ++countId;
         this.nome = nome;
         this.nascimento = (Date) nascimento;
     }
 
     public long getID() {
-        return ID;
+        return id_aluno;
     }
     public String getNome() {
         return nome;
