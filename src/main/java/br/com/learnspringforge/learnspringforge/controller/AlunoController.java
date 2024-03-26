@@ -13,11 +13,11 @@ public class AlunoController {
     public AlunoController(AlunoService alunoService) {
         this.alunoService = alunoService;
     }
-    @GetMapping("/todos")
+    @GetMapping()
     public List<Aluno> consultarTodosAlunos() {
         return alunoService.getAlunosCadastrados();
     }
-    @PostMapping("/cadastro")
+    @PostMapping()
     public void cadastrarAluno(@RequestBody Aluno aluno) {
         alunoService.cadastrarAluno(aluno);
     }
