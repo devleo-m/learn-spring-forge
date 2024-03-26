@@ -13,8 +13,7 @@ public class AlunoService {
         return alunosCadastrados;
     }
 
-    public static void cadastrarAluno(String nome, Date nascimento) {
-        Aluno aluno = new Aluno(nome, nascimento);
+    public static void cadastrarAluno(Aluno aluno) {
         alunosCadastrados.add(aluno);
     }
 }
