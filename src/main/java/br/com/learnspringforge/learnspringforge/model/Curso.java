@@ -1,6 +1,12 @@
 package br.com.learnspringforge.learnspringforge.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import static br.com.learnspringforge.learnspringforge.service.CursoService.cadastrarCurso;
+
 public class Curso {
+    private static List<Curso> cursosCadastrados = new ArrayList<>();
     private long id_curso;
     private static long countId = 0;
     private String nome;
@@ -14,6 +20,15 @@ public class Curso {
         if (cargaHoraria <= 900000 && cargaHoraria >= 1){
             this.cargaHoraria = cargaHoraria;
         }
+        cadastrarCurso(this); // Chamada para o método de inclusão na lista de cursos cadastrados
+    }
+
+    public static List<Curso> getCursosCadastrados() {
+        return cursosCadastrados;
+    }
+
+    private static void cadastrarCurso(Curso curso) {
+        cursosCadastrados.add(curso);
     }
 
     public long getId_curso() {
