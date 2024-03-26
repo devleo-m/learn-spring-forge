@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-// CARD 4!!!@
+// CARD 4
 @Service
 public class AlunoService {
     private static List<Aluno> alunosCadastrados = new ArrayList<>();
@@ -18,5 +18,16 @@ public class AlunoService {
     public static void cadastrarAluno(Aluno aluno) {
         alunosCadastrados.add(aluno);
     }
+
+    // Método para encontrar um aluno pelo ID
+    public static Aluno encontrarAlunoPorId(long id) {
+        for (Aluno aluno : alunosCadastrados) {
+            if (aluno.getID() == id) {
+                return aluno;
+            }
+        }
+        return null; // Retorna null se nenhum aluno for encontrado com o ID especificado
+    }
+
 }
 

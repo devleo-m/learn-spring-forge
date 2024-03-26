@@ -1,11 +1,8 @@
 package br.com.learnspringforge.learnspringforge.model;
 
-//import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
-import static br.com.learnspringforge.learnspringforge.service.AlunoService.cadastrarAluno;
 
 public class Aluno {
 
@@ -30,6 +27,16 @@ public class Aluno {
 
     private static void cadastrarAluno(Aluno aluno) {
         alunosCadastrados.add(aluno);
+    }
+
+    // Método para encontrar um aluno pelo ID # card 8
+    public static Aluno encontrarAlunoPorId(long id) {
+        for (Aluno aluno : alunosCadastrados) {
+            if (aluno.getID() == id) {
+                return aluno;
+            }
+        }
+        return null; // Retorna null se nenhum aluno for encontrado com o ID especificado
     }
 
     //GETTS E SETTS

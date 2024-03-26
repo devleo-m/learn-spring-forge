@@ -7,10 +7,14 @@ import static br.com.learnspringforge.learnspringforge.service.CursoService.cada
 
 public class Curso {
     private static List<Curso> cursosCadastrados = new ArrayList<>();
+    private List<Aluno> alunosMatriculados;
     private long id_curso;
     private static long countId = 0;
     private String nome;
     private String descricao;
+
+
+
     private short cargaHoraria;
 
     public Curso(String nome, String descricao, short cargaHoraria) {
@@ -21,6 +25,8 @@ public class Curso {
             this.cargaHoraria = cargaHoraria;
         }
         cadastrarCurso(this); // Chamada para o método de inclusão na lista de cursos cadastrados
+        this.alunosMatriculados = new ArrayList<>(); // Inicializando a lista de alunos matriculados
+
     }
 
     public static List<Curso> getCursosCadastrados() {
@@ -65,5 +71,14 @@ public class Curso {
 
     public void setCargaHoraria(short cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
+    }
+
+    public List<Aluno> getAlunosMatriculados() {
+        return alunosMatriculados;
+    }
+
+    // Método para adicionar um aluno à lista de alunos matriculados
+    public void adicionarAluno(Aluno aluno) {
+        alunosMatriculados.add(aluno);
     }
 }
